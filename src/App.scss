@@ -1,0 +1,120 @@
+.container {
+  height: 45vh;
+  display: inline-block;
+  width: 100%;
+  clear: left;
+}
+
+.neon-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.lock {
+  height: 250px;
+
+  &.spin {
+    animation: spin 1.5s infinite;
+  }
+
+  &.shake {
+    animation: bombSpin 0.2s linear infinite alternate;
+  }
+}
+
+.left,
+.right {
+  width: 50%;
+  float: left;
+  text-align: center;
+  position: relative;
+  height: 100%;
+}
+
+.center-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timer {
+  color: #30ff37;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.input-container {
+  height: 30vh;
+  text-align: center;
+
+  input {
+    display: inline-block;
+    width: calc((100vw / 8) - 13px);
+    height: 100px;
+    margin-right: 5px;
+    font-size: 82px;
+    text-align: center;
+  }
+}
+
+.lock-small {
+  height: 75px;
+  display: inline-block;
+  position: relative;
+  top: 15px;
+}
+
+.unlock-button {
+  text-align: center;
+  margin: 30px auto;
+  background-color: #21c627;
+  color: white;
+  padding: 10px 20px;
+  font-size: 60px;
+  outline: none;
+  border: 1px solid #21c627;
+  cursor: pointer;
+}
+
+.unlock-button:hover,
+.unlock-button:active {
+  background-color: #25ed2d;
+}
+
+.victory {
+  margin: 0 auto;
+  color: #30ff37;
+  font-size: 100px;
+  font-weight: bold;
+  animation: flash 0.5s infinite alternate;
+}
+
+@keyframes flash {
+  from {
+    color: #30ff37;
+    transform: scale(1) rotate(-5deg);
+  }
+  to {
+    color: #2a24ed;
+    transform: scale(1.5) rotate(5deg);
+  }
+}
+
+@keyframes bombSpin {
+  from {
+    transform: rotate(-2deg);
+  }
+  to {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
